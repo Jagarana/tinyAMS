@@ -11,6 +11,7 @@ import {
 } from "@remix-run/react";
 
 import { getUser } from "~/session.server";
+import NavBar from "~/components/NavBar";
 import stylesheet from "~/tailwind.css";
 
 export const links: LinksFunction = () => [
@@ -31,11 +32,14 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body className="flex flex-row-reverse">
+        <NavBar />
+        <div>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        </div>
       </body>
     </html>
   );
